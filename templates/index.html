@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anomaly Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Health Data Anomaly Detection</h1>
+
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".csv" required>
+            <button type="submit">Detect Anomalies</button>
+        </form>
+
+        {% if download_link %}
+        <div class="download-section">
+            <p>Anomaly detection completed! You can download the results.</p>
+            <a href="{{ url_for('download_file', filename=download_link) }}" class="download-btn">Download Results</a>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
