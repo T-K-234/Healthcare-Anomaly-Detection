@@ -206,7 +206,7 @@ Example Output:
 # Technologies Used
 
 • Python
-• PyTorch
+• Tensorflow
 • Flask
 • NumPy
 • Pandas
